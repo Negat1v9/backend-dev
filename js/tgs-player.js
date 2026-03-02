@@ -10,8 +10,15 @@ class TgsPlayer extends HTMLElement {
 
     async _loadTgSticker() {
         if (!window.RLottie) {
+            // Определяем базовый путь на основе текущего скрипта
+            const currentScript = document.currentScript || (function() {
+                const scripts = document.getElementsByTagName('script');
+                return scripts[scripts.length - 1];
+            })();
+            const basePath = new URL('.', currentScript.src).href;
+            
             const script = document.createElement('script');
-            script.src = '/js/tgsticker.js';
+            script.src = basePath + 'tgsticker.js';
             script.async = false;
             await new Promise((resolve) => {
                 script.onload = resolve;
