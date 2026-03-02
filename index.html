@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Site // 90s Retro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">[ BACKEND_DEV ]</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <!-- <li><a href="#blog" class="nav-link">Blog</a></li> -->
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="GOLANG BACKEND DEV">BACKEND DEV</h1>
+            <p class="subtitle">Building Scalable & Efficient Systems</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Explore</button>
+                <button class="btn btn-secondary">About Me</button>
+            </div>
+        </div>
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <span>go_server.exe</span>
+                <div class="terminal-buttons">
+                    <div class="btn-min"></div>
+                    <div class="btn-max"></div>
+                    <div class="btn-close"></div>
+                </div>
+            </div>
+            <div class="terminal-content">
+                <p>> Starting HTTP server on :8080...</p>
+                <p>> Database connection established</p>
+                <p>> Server ready to accept requests</p>
+                <p class="cursor">_</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-container">
+            <div class="about-card">
+                <h3>👤 Who I Am</h3>
+                <p>Student and Go developer: I love simple solutions for complex problems. I write web services—clean, fast, and with tests. I'm looking for interesting projects and a team where I can grow.</p>
+            </div>
+            <div class="about-card">
+                <h3>🎓 Background</h3>
+                <p>Started programming due to poor education at university — had to learn everything myself, and it got me hooked: now I enjoy independent problem-solving and continuous growth.</p>
+            </div>
+            <div class="about-card">
+                <h3>🎨 Passion</h3>
+                <p>Bringing ideas to life — making sure everything works exactly as intended. I want to create useful things that genuinely help people.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Skills & Experience</h2>
+        <div class="skills-grid">
+            <div class="skill-box">
+                <div class="skill-icon">
+                    <img src="./assets/img/go.webp" alt="Golang Logo" class="skill-logo">
+                </div>
+                <h3>Golang</h3>
+                <p>Go, Goroutines, Channels, REST API</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-icon">
+                    <img src="./assets/img/postgresql.webp" alt="PostgreSQL Logo" class="skill-logo">
+                </div>
+                <h3>Databases</h3>
+                <p>PostgreSQL, MongoDB, Redis, SQLite</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%"></div>
+                </div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-icon">
+                    <img src="./assets/img/docker.webp" alt="Docker Logo" class="skill-logo">
+                </div>
+                <h3>DevOps</h3>
+                <p>Docker, CI/CD, Linux, Git</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%"></div>
+                </div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-icon">
+                    <img src="./assets/img/openapi.webp" alt="API & Protocols Logo" class="skill-logo">
+                </div>
+                <h3>API & Protocols</h3>
+                <p>gRPC, WebSocket, HTTP/2</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 64%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <!-- <section id="blog" class="section">
+        <h2 class="section-title">Latest Posts</h2>
+        <div class="blog-container">
+            <article class="blog-post">
+                <div class="blog-date">Mar 02, 2026</div>
+                <h3>Concurrency in Go: Patterns & Best Practices</h3>
+                <p>Exploring goroutines, channels, and sync.WaitGroup. How to properly organize concurrent code and avoid race conditions...</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            <article class="blog-post">
+                <div class="blog-date">Feb 28, 2026</div>
+                <h3>Building RESTful APIs with Golang</h3>
+                <p>From routing to middleware: creating production-ready APIs using chi/mux. JWT, validation, and error handling...</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+            <article class="blog-post">
+                <div class="blog-date">Feb 24, 2026</div>
+                <h3>PostgreSQL Performance Tips</h3>
+                <p>Query optimization, indexes, EXPLAIN ANALYZE, and connection pooling. How to speed up your database by 10x...</p>
+                <a href="#" class="read-more">Read More →</a>
+            </article>
+        </div>
+    </section> -->
+
+    <!-- Contact -->
+    <section id="contact" class="section contact-section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="social-links">
+                <h3>Find Me Here:</h3>
+                <div class="social-icons">
+                    <a href="https://t.me/Posit1v9" class="social-icon" title="Telegram">Telegram</a>
+                    <a href="https://github.com/Negat1v9"  class="social-icon" title="GitHub">GitHub</a>
+                    <a href="mailto:fixitslow@outlook.com" class="social-icon" title="Email">Email</a>
+                </div>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Info</h3>
+                <p>📧 Email: fixitslow@outlook.com</p>
+                <p>💬 Feel free to reach out!</p>
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">Or play the game → click 'Explore' button</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Personal Site. Made with <span class="heart">❤️</span></p>
+    </footer>
+
+    <!-- Interactive Game (Hidden) -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Catch The Particles!</h2>
+            <div id="gameContainer" class="game-container"></div>
+            <p id="gameScore">Score: 0</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
