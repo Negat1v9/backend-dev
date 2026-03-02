@@ -116,7 +116,12 @@ var RLottie = (function () {
         if (!apiInitStarted) {
           console.log(dT(), 'tgsticker init');
           apiInitStarted = true;
-          QueryableWorkerProxy.init('/js/tgsticker-worker.js?14', rlottie.WORKERS_LIMIT, function() {
+          const currentScript = document.currentScript || (function() {
+                const scripts = document.getElementsByTagName('script');
+                return scripts[scripts.length - 1];
+            })();
+          const basePath = new URL('.', currentScript.src).href;
+          QueryableWorkerProxy.init(basePath + 'tgsticker-worker.js?14', rlottie.WORKERS_LIMIT, function() {
             apiInited = true;
             for (var i = 0; i < initCallbacks.length; i++) {
               initCallbacks[i]();
