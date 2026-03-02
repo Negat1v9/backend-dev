@@ -17,6 +17,9 @@ class TgsPlayer extends HTMLElement {
             })();
             const basePath = new URL('.', currentScript.src).href;
             
+            // Сохраняем в window для использования в tgsticker.js
+            window.__tgsBasePath = basePath;
+            
             const script = document.createElement('script');
             script.src = basePath + 'tgsticker.js';
             script.async = false;
@@ -62,12 +65,20 @@ class TgsPlayer extends HTMLElement {
         }
     }
 
+    // Преобразуем относительный путь в абсолютный URL
+    resolveUrl(relPath) {
+        return new URL(relPath, window.location.href).href;
+    }
+
     connectedCallback() {
         const picture = document.createElement('picture');
         
         const source = document.createElement('source');
         source.type = 'application/x-tgsticker';
-        source.srcset = this.getAttribute('src') || '';
+        
+        // Разрешаем путь относительно текущей страницы
+        const srcPath = this.getAttribute('src') || '';
+        source.srcset = this.resolveUrl(srcPath);
         
         picture.appendChild(source);
         this.appendChild(picture);

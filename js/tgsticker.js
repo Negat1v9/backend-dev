@@ -9,7 +9,7 @@ var RLottie = (function () {
   
     rlottie.Api = {};
     rlottie.players = Object.create(null);;
-    rlottie.WORKERS_LIMIT = 4;
+    rlottie.WORKERS_LIMIT = 1;
   
     var reqId = 0;
     var mainLoopAf = false;
@@ -116,11 +116,18 @@ var RLottie = (function () {
         if (!apiInitStarted) {
           console.log(dT(), 'tgsticker init');
           apiInitStarted = true;
-          const currentScript = document.currentScript || (function() {
-                const scripts = document.getElementsByTagName('script');
-                return scripts[scripts.length - 1];
-            })();
-          const basePath = new URL('.', currentScript.src).href;
+          // Используем переданный basePath или определяем сами
+          const basePath = window.__tgsBasePath || (function() {
+            try {
+              const currentScript = document.currentScript || (function() {
+                    const scripts = document.getElementsByTagName('script');
+                    return scripts[scripts.length - 1];
+                })();
+              return new URL('.', currentScript.src).href;
+            } catch (e) {
+              return './js/';
+            }
+          })();
           QueryableWorkerProxy.init(basePath + 'tgsticker-worker.js?14', rlottie.WORKERS_LIMIT, function() {
             apiInited = true;
             for (var i = 0; i < initCallbacks.length; i++) {
